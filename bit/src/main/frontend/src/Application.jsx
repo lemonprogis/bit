@@ -15,17 +15,17 @@ export class Application extends React.Component {
         };
     }
     fetchState() {
-        $.ajax('/api/hello').done((data) => this.setState(data));
+        $.ajax('/api/people').done((data) => this.setState(data));
     }
     render() {
         return (
             <div className="app-hello-message">
-                Hello {this.state.name} #{this.state.counter} at {this.state.timestamp}
+                Hello!
             </div>
         );
     }
     componentDidMount() {
-        this.interval = window.setInterval(this.fetchState.bind(this), 1000);
+        //this.interval = window.setInterval(this.fetchState.bind(this), 1000);
     }
     componentWillUnmount() {
         clearInterval(this.interval);
